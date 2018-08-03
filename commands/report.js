@@ -23,7 +23,7 @@ module.exports.run = async (bot,message,args) => {
     .addField("Channel:", message.channel)
     .addField("Time:", message.createdAt)
     .addField("Reason:", reason)
-    .setFooter(`${message.author} reported ${rUser} for ${reason} in ${message.channel} at ${message.createdAt}`, bot.user.displayAvatarURL)
+    .setFooter(`${message.member.displayName} reported ${rUser.displayName} for ${reason} in ${message.channel.name} at ${message.createdAt}`, bot.user.displayAvatarURL)
     .setTimestamp(new Date());
     
     let reportschannel = message.guild.channels.find(`name`, "logs");
