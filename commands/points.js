@@ -14,7 +14,7 @@ let mentionedPointsEmbed = new Discord.RichEmbed()
 .setTitle(`${user.displayName}'s Points`)
 .setColor("#0f71fc")
 .addField("Points", curpoints, true)
-.setFooter(`${user.displayName}'s Points.`)
+.setFooter(`${user.displayName}'s Points.`, user.user.displayAvatarURL)
 .setTimestamp(new Date());
 message.channel.send(mentionedPointsEmbed)
 } else
