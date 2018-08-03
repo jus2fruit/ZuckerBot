@@ -21,10 +21,10 @@ let curlvl = xp[user.id].level;
 let nxtLvlXp = curlvl * 700;
 let difference = nxtLvlXp - curxp;
 
-if(!merits[user]) {
-    merits[user] = {
+if(!merits[user.id]) {
+    merits[user.id] = {
         merits: 0
-   };
+    };
    }
 
 
@@ -32,14 +32,15 @@ if(!merits[user]) {
    if(message.mentions.members.first()){
     let statsembedU = new Discord.RichEmbed()
     .setAuthor(user.displayName)
-    .setColor("#0f71fc")
-    .addField("Coins",uCoins)
+    .setThumbnail(user.user.displayAvatarURL)
+    .setColor(user.displayHexColor)
+    .addField("Coins",uCoins, true)
     .addField("Level", curlvl, true)
     .addField("XP", curxp, true)
-    .addField("Points", uPoints)
-    .addField("Merits", uMerits)
-    .addField("Next level", `${difference} XP needed`)
-    .setFooter(`${user.displayName}'s stats`)
+    .addField("Points", uPoints, true)
+    .addField("Merits", uMerits, true)
+    .addField("Next level", `${difference} XP needed`, true)
+    .setFooter(`${user.displayName}'s stats`, user.user.displayAvatarURL)
     .setTimestamp(new Date());
 
     message.channel.send(statsembedU);
@@ -47,7 +48,7 @@ if(!merits[user]) {
 let statsembed = new Discord.RichEmbed()
 .setAuthor(message.author.username)
 .setThumbnail(message.author.displayAvatarURL)
-.setColor("#0f71fc")
+.setColor(message.member.displayHexColor)
 .addField("Coins:",uCoins, true)
 .addField("Level:", curlvl, true)
 .addField("XP:", curxp, true)
