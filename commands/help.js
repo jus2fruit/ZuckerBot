@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 
 module.exports.run = async (bot,message,args) => {
 message.channel.send('**Standard Commands List**\n**The Prefix is z! use this before every command**' + 
-                        "\n\n**Core -** `help` `server` `botinfo` `userinfo` `uptime` `ping`" + 
+                        "\n\n**Core -** `help` `server` `botinfo` `userinfo` `uptime` `ping` `about`" + 
                         "\n**Fun -** `dog` `dogfact` `cat` `catfact` `8ball` `coinflip` `joke` `insultme` `xkcd` `avatar` `help` `shoot` `hug` `slap` `kiss`" +
                         "\n**Economy -** `daily` `balance` `pay` `stats` `level` `roleshop` `buyrole` `merit`" + 
                         "\n**Utilities -** `report` `randcolor` " + 

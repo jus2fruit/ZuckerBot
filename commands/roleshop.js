@@ -2,8 +2,13 @@ const Discord = require("discord.js");
 
 module.exports.run = async (bot,message,args) => {
 
-message.channel.send("**The Role Shop**\n**VIP**: 1000 coins\n**VIP+**: 1500 coins\n**MVP**: 2500 coins\n**MVP+**: 5000 coins\nYou can get coins by talking in chat and doing z!daily every day. To see your coins do z!balance. To purchase a role do z!rolebuy <rolename>.")
-
+let roleShop = new Discord.RichEmbed()
+.setTitle("The Role Shop")
+.setDescription("<@&435588793936904214>: 1,000 coins\n<@&443145260835536916>: 1,500 coins\n<@&443145459566116866>: 2,500 coins\n<@&443145573567299594>: 5,000 coins\n<@&474985778284462091>: 10,000 coins\nTo purchase a role do z!buyrole <rolename>\nYou can get coins by doing z!daily every day and sending messages.\n*All purchases are final, no refuns!*")
+.setColor(message.member.displayHexColor)
+.setFooter("The Role Shop", message.author.displayAvatarURL)
+.setTimestamp(new Date());
+message.channel.send(roleShop);
  }
 
 
