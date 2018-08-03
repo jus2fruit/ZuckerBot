@@ -6,7 +6,7 @@ module.exports.run = async (bot,message,args) => {
     message.delete().catch(O_o=>{});
             const pollTopic = await message.channel.send(message.content.slice(6));
             await pollTopic.react(`✅`);
-            await pollTopic.react(`⛔`);
+            await pollTopic.react(`🚫`);
     } else 
     message.channel.send("You don't have permission to use this command");
  }
