@@ -12,6 +12,7 @@ let NASAIcon = 'https://png.icons8.com/color/1600/nasa.png';
       .setTitle(body.title)
       .setImage(body.hdurl)
       .setDescription(body.explanation)
+      .setURL("https://apod.nasa.gov/apod/astropix.html")
       .setFooter("NASA's Astronomy Picture Of The Day", NASAIcon)
       .setTimestamp(new Date());
       message.channel.send(apod);
